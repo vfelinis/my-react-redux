@@ -40,7 +40,7 @@ class GetDocs extends React.Component{
 	render(){
 		return (
 			<div>
-				<h1>Ваши документы</h1>
+				<h1>Ваши документы (update)</h1>
 				<button onClick={this.props.handleShowCreateDoc} className="btn btn-lg btn-default">Создать новый документ</button>
 				<table className="table table-striped">
 					<thead>

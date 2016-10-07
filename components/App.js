@@ -1,30 +1,18 @@
 import React from 'react'
-import CreateDoc from './CreateDoc'
-import Documents from './Documents'
+import {connect} from 'react-redux'
 
 class App extends React.Component{
-	constructor(){
-		super();
-		this.state = {
-			showCreateDoc: false
-		};
-	}
-	handleShowCreateDoc(){
-		this.setState({
-			showCreateDoc: !this.state.showCreateDoc
-		});
-	}
 	render(){
 		return (
 			<div className="container">
-				{
-					this.state.showCreateDoc ?
-						<CreateDoc handleShowCreateDoc={this.handleShowCreateDoc.bind(this)}/> :
-							<Documents handleShowCreateDoc={this.handleShowCreateDoc.bind(this)}/>
-				}
+				{this.props.text}
 			</div>
 		)
 	}
 }
 
-export default App
+function mapStateToProps(state){
+	return state
+}
+
+export default connect(mapStateToProps)(App)
